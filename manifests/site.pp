@@ -1,4 +1,3 @@
-# TODO: make as facts 
 if $::osfamily == 'Darwin' {
     Package {
         provider => 'brew',
@@ -48,11 +47,16 @@ package { 'ranger': }
 # a better configured vim
 package { 'vim': }
 
+# git relative
+# TODO: manage alias
+package { 'hub': }
+package { 'git-extras': }
+
 # utils
 package { 'tree': }
 
 ####################
-# Common softwares
+# Python
 ####################
 package { ['python', 'python3']: }
 
