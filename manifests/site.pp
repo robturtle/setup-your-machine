@@ -48,8 +48,15 @@ if $::osfamily == 'Darwin' {
     macdefaults { 'stop-open-photos-when-connect-to-iphone-ipad':
         domain => 'com.apple.ImageCapture',
         key    => 'disableHotPlug',
+        type   => 'bool',
         value  => true,
-        notify => Exec[restart_UI],
+    }
+
+    macdefaults { 'crash-report-use-notification':
+        domain => 'com.apple.CrashReporter',
+        key    => 'UseUNC',
+        type   => 'bool',
+        value  => true,
     }
 }
 
