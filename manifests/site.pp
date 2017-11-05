@@ -146,6 +146,9 @@ package { 'google-chrome':
 package { 'slack':
     provider => brewcask,
 }
+package { 'dropbox':
+    provider => brewcask,
+}
 
 ####################
 # Github
