@@ -1,0 +1,18 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-stdlib (4.21.0)
+    thekevjames-homebrew (1.6.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+
+GIT
+  remote: git@github.com:robturtle/puppet-macdefaults.git
+  ref: master
+  sha: c92fafa5034e01363044a1df6001fd4e5ab40ccf
+  specs:
+    grahamgilbert-macdefaults (0.0.1)
+
+DEPENDENCIES
+  grahamgilbert-macdefaults (>= 0)
+  thekevjames-homebrew (= 1.6.0)
+
