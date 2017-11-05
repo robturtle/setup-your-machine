@@ -34,8 +34,13 @@ file { "${home}/.editorconfig":
     source =>
     'https://gist.githubusercontent.com/robturtle/485da1547ccd96a76e3061e6ba189777/raw/6dc6dd37224c5909348e8261dbcfeecc0653edeb/.editorconfig',
 }
-# use temaplate
-# TODO: .gitconfig
+
+# TODO: variable name/email
+file { "${home}/.gitconfig":
+    ensure => file,
+    source =>
+    'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/5b0e892a45cd285b9e24d2aba7b9645131769b7d/.gitconfig',
+}
 
 # use Augeas
 # TODO: .vimrc
