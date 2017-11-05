@@ -78,6 +78,9 @@ package { 'iterm2':
 package { 'google-chrome':
     provider => brewcask,
 }
+package { 'slack':
+    provider => brewcask,
+}
 
 ####################
 # Github
