@@ -56,6 +56,11 @@ package { 'git-extras': }
 package { 'tree': }
 
 ####################
+# Github
+####################
+# TODO: setup https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent
+
+####################
 # Python
 ####################
 package { ['python', 'python3']: }
