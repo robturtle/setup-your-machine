@@ -8,3 +8,4 @@ Use it to auto deploy developing environment. The reason not to use Boxen is mai
 - [ ] paramegerized config
 - [ ] setup email accounts
 - [ ] cleanup docker
+- [ ] defaults write iterm2.??? (dropdown, powerline fonts)
