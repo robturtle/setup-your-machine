@@ -8,6 +8,7 @@ if $::osfamily == 'Darwin' {
 }
 
 if $::osfamily == 'Darwin' {
+
     # Mac System-wise Emacs Key Bindings
     file { "${home}/Library/KeyBindings":
         ensure => directory
@@ -62,6 +63,13 @@ if $::osfamily == 'Darwin' {
     macdefaults { 'disable-two-fingers-goback-in-chrome':
         domain => 'com.google.Chrome.plist',
         key    => 'AppleEnableSwipeNavigateWithScrolls ',
+        type   => 'bool',
+        value  => false,
+    }
+
+    macdefaults { 'disable-auto-spelling-correction':
+        domain => 'NSGlobalDomain',
+        key    => 'NSAutomaticSpellingCorrectionEnabled',
         type   => 'bool',
         value  => false,
     }
