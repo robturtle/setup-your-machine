@@ -110,9 +110,20 @@ file { "${home}/.gitconfig":
     source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/5b0e892a45cd285b9e24d2aba7b9645131769b7d/.gitconfig',
 }
 
-# use Augeas
-# TODO: .vimrc
+vcsrepo { "${home}/.vim/bundle/Vundle.vim":
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/VundleVim/Vundle.vim.git',
+}
+# TODO: use Augeas
+-> file { "${home}/.vimrc":
+    ensure => present,
+    source => 'https://gist.githubusercontent.com/robturtle/8b424daa53cf73e7e102e5d69dc8a908/raw/ab8b4a259df35e286a702d7640a4f221ed4a1e7a/.vimrc',
+}
+
+# TODO: use Augeas
 # TODO: .zshrc
+
 
 ####################
 # Common softwares
