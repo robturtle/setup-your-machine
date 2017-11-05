@@ -203,6 +203,14 @@ package { 'ipython':
     require  => Package['python3'],
 }
 
+# You will need this if u type fast with many typos
+# The joke: https://github.com/nvbn/thefuck/issues/251 
+#package { 'thefuck':
+#    provider => pip3,
+#    require  => Package['python3'],
+#}
+# TODO -> configure thefuck in zsh with Augaes
+
 ####################
 # Ruby
 ####################
