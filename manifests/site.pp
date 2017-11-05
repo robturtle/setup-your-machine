@@ -74,6 +74,13 @@ if $::osfamily == 'Darwin' {
         value  => false,
     }
 
+    macdefaults { 'show-full-path-in-finder':
+        domain => 'com.apple.finder',
+        key    => '_FXShowPosixPathInTitle',
+        type   => 'bool',
+        value  => true,
+    }
+
 }
 
 ####################
