@@ -17,6 +17,15 @@ if $::osfamily == 'Darwin' {
         source =>
         'https://gist.githubusercontent.com/cheapRoc/9670905/raw/1c1cd2e84daf07c9a4c8de0ff86d1baf75d858c6/EmacsKeyBinding.dict',
     }
+
+    # Defaults
+    include macdefaults
+    mac_defaults { 'show-extension':
+        domain => 'NSGlobalDomain',
+        key    => 'AppleShowAllExtensions',
+        type   => 'bool',
+        value  => 'true',
+    }
 }
 
 ####################
@@ -56,7 +65,9 @@ file { "${home}/.gitconfig":
 # Common softwares
 ####################
 # a great CLI file manager
-package { 'ranger': }
+package { 'ranger':
+    provider => 'brew',
+}
 
 # a better configured vim
 package { 'vim': }
