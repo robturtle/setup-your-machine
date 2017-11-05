@@ -93,7 +93,6 @@ if $::osfamily == 'Darwin' {
 ####################
 # TODO: wechat
 # TODO: sougou input method http://pinyin.sogou.com/mac/softdown.php
-# TODO: switch input method => M-Space
 
 ####################
 # Common dot files
@@ -172,6 +171,10 @@ package { 'rubymine':
 ####################
 # Window resizer => best for big screen
 package { 'spectacle':
+    provider => brewcask,
+}
+# Tree structured TODO list (enjoyable to use)
+package { 'workflowy':
     provider => brewcask,
 }
 
