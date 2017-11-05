@@ -20,7 +20,7 @@ if $::osfamily == 'Darwin' {
     }
 
     # Defaults
-    macdefaults { 'show-extension':
+    macdefaults { 'finder-show-all-file-extensions':
         domain => 'NSGlobalDomain',
         key    => 'AppleShowAllExtensions',
         type   => 'bool',
