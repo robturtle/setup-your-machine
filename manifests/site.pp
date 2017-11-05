@@ -103,12 +103,6 @@ file { "${home}/.editorconfig":
     source => 'https://gist.githubusercontent.com/robturtle/485da1547ccd96a76e3061e6ba189777/raw/6dc6dd37224c5909348e8261dbcfeecc0653edeb/.editorconfig',
 }
 
-# TODO: variable name/email
-file { "${home}/.gitconfig":
-    ensure => file,
-    source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/5b0e892a45cd285b9e24d2aba7b9645131769b7d/.gitconfig',
-}
-
 vcsrepo { "${home}/.vim/bundle/Vundle.vim":
     ensure   => present,
     provider => git,
@@ -137,6 +131,20 @@ package { 'ranger':
 package { 'vim': }
 
 # git relative
+file { "${home}/.gitconfig":
+    ensure => file,
+    source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/0d9f17d07879ff1ccc4660cdfb512d358ced0e84/.gitconfig',
+}
+# Those lazy module authors never thought their mod will be used in OSX. :thumb_down:
+-> exec { 'set_git_user_name':
+    command => 'git config user.name Yang\ Liu',
+    path    => '/usr/local/bin:/usr/bin',
+}
+-> exec { 'set_git_user_email':
+    command => 'git config user.email jeremyrobturtle@gmail.com',
+    path    => '/usr/local/bin:/usr/bin',
+}
+
 # TODO: manage alias
 package { 'hub': }
 package { 'git-extras': }
