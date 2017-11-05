@@ -189,11 +189,21 @@ package { 'rbenv': }
 ####################
 # powerline 
 ####################
-# package { 'powerline':
-#    name     => 'powerline-status',
-#    provider => pip,
-#    require  => Package['python'],
-# }
+if $::osfamily == 'Darwin' {
+    file { '/usr/local/bin/pip':
+        ensure  => 'link',
+        replace => 'no',
+        target  => '/usr/local/bin/pip2',
+        notify  => Package['powerline'],
+    }
+}
+
+package { 'powerline':
+    name     => 'powerline-status',
+    provider => pip,
+    require  => Package['python'],
+}
+# TODO: notify vim setup powerline only it's installed
 
 if $::osfamily == 'Darwin' {
     $font_dir = "${home}/Library/Fonts"
