@@ -79,6 +79,7 @@ if $::osfamily == 'Darwin' {
         key    => '_FXShowPosixPathInTitle',
         type   => 'bool',
         value  => true,
+        notify => Exec[restart_finder],
     }
 
 }
