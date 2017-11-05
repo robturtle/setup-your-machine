@@ -2,3 +2,5 @@
 
 Use it to auto deploy developing environment. The reason not to use Boxen is mainly about keeping the environemt with least dependencies and light-weighted.
 
+- [ ] app store from CLI (paste)
+- [ ] activate license from CLI [alfred, bartender, JetBrains]
