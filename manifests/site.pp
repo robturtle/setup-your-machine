@@ -126,9 +126,8 @@ vcsrepo { "${home}/.oh-my-zsh":
 -> file { "${home}/.zshrc":
     require => Package['powerline'],
     ensure => present,
-    source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/94849d9affe876a2da9eb55cd72af4a9bd2d5239/.zshrc',
+    source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/d77101ffcf012a7f246543a9e9ae29e1836ba118/.zshrc',
 }
-# TODO: use Augeas
 
 exec { "change_shell":
     command     => "chsh -s zsh ${::id}",
