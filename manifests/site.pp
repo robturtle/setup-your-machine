@@ -210,3 +210,11 @@ file { $font_dir:
 ####################
 # TODO: percol.d
 # TODO: percol function zsh plugin
+
+###################
+# Life
+###################
+# Show lyrics (supports Spotify & iTunues)
+package { 'lyricsx':
+    provider => brewcask,
+}
