@@ -6,9 +6,9 @@ FORGE
       puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
 
 GIT
-  remote: git@github.com:robturtle/puppet-macdefaults.git
+  remote: https://github.com/keeleysam/puppet-macdefaults.git
   ref: master
-  sha: fa8141f77b419d1e4caaee2c4fe2c285b0f02947
+  sha: 8a8be836d8b9402f2a1d9b06b4425e2531025622
   specs:
     grahamgilbert-macdefaults (0.0.1)
 

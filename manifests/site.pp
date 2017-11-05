@@ -19,8 +19,7 @@ if $::osfamily == 'Darwin' {
     }
 
     # Defaults
-    include macdefaults
-    mac_defaults { 'show-extension':
+    macdefaults { 'show-extension':
         domain => 'NSGlobalDomain',
         key    => 'AppleShowAllExtensions',
         type   => 'bool',
