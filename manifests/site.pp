@@ -23,6 +23,12 @@ if $::osfamily == 'Darwin' {
 }
 
 ####################
+# Chinese
+####################
+# TODO: wechat
+# TODO: sougou input method http://pinyin.sogou.com/mac/softdown.php
+
+####################
 # Common dot files
 ####################
 # default top editorconfig
