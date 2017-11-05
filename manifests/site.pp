@@ -149,6 +149,10 @@ package { 'slack':
 package { 'dropbox':
     provider => brewcask,
 }
+# The best Markdown editor made by a smart Chinese guy
+package { 'typora':
+    provider => brewcask,
+}
 package { 'rubymine':
     provider => brewcask,
 }
