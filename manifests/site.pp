@@ -58,6 +58,14 @@ if $::osfamily == 'Darwin' {
         type   => 'bool',
         value  => true,
     }
+
+    macdefaults { 'disable-two-fingers-goback-in-chrome':
+        domain => 'com.google.Chrome.plist',
+        key    => 'AppleEnableSwipeNavigateWithScrolls ',
+        type   => 'bool',
+        value  => false,
+    }
+
 }
 
 ####################
