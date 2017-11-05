@@ -75,6 +75,9 @@ package { 'tree': }
 package { 'iterm2':
     provider => brewcask,
 }
+package { 'google-chrome':
+    provider => brewcask,
+}
 
 ####################
 # Github
