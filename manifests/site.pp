@@ -24,6 +24,12 @@ if $::osfamily == 'Darwin' {
         key    => 'AppleShowAllExtensions',
         type   => 'bool',
         value  => true,
+        notify => Exec[restart_finder],
+    }
+    exec { 'restart_finder':
+        command     => 'killall Finder',
+        path        => '/usr/bin:/bin',
+        refreshonly => true,
     }
 
     macdefaults { 'disable-screenshot-window-shadows':
@@ -31,7 +37,7 @@ if $::osfamily == 'Darwin' {
         key    => 'disable-shadow',
         type   => 'bool',
         value  => true,
-        notify => Exec[restart_UI]
+        notify => Exec[restart_UI],
     }
     exec { 'restart_UI':
         command     => 'killall SystemUIServer',
