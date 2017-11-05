@@ -15,8 +15,7 @@ if $::osfamily == 'Darwin' {
     }
     -> file { "${home}/Library/KeyBindings/DefaultKeyBinding.dict":
         ensure => present,
-        source =>
-        'https://gist.githubusercontent.com/cheapRoc/9670905/raw/1c1cd2e84daf07c9a4c8de0ff86d1baf75d858c6/EmacsKeyBinding.dict',
+        source => 'https://gist.githubusercontent.com/cheapRoc/9670905/raw/1c1cd2e84daf07c9a4c8de0ff86d1baf75d858c6/EmacsKeyBinding.dict',
     }
 
     # Defaults
