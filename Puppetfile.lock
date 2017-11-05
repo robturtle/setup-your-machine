@@ -2,6 +2,7 @@ FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
     puppetlabs-stdlib (4.21.0)
+    puppetlabs-vcsrepo (2.2.0)
     thekevjames-homebrew (1.7.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
 
@@ -14,5 +15,6 @@ GIT
 
 DEPENDENCIES
   grahamgilbert-macdefaults (>= 0)
+  puppetlabs-vcsrepo (= 2.2.0)
   thekevjames-homebrew (= 1.7.1)
 
