@@ -7,3 +7,4 @@ Use it to auto deploy developing environment. The reason not to use Boxen is mai
 - [ ] change keyboard (modifier keys, shortcuts)
 - [ ] paramegerized config
 - [ ] setup email accounts
+- [ ] cleanup docker
