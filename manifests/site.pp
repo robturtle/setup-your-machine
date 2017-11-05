@@ -25,6 +25,19 @@ if $::osfamily == 'Darwin' {
         type   => 'bool',
         value  => true,
     }
+
+    macdefaults { 'disable-screenshot-window-shadows':
+        domain => 'com.apple.screencapture',
+        key    => 'disable-shadow',
+        type   => 'bool',
+        value  => true,
+        notify => Exec[restart_UI]
+    }
+    exec { 'restart_UI':
+        command     => 'killall SystemUIServer',
+        path        => '/usr/bin:/bin',
+        refreshonly => true,
+    }
 }
 
 ####################
