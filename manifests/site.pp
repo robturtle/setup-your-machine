@@ -11,8 +11,8 @@ if $::osfamily == 'Darwin' {
     # Mac System-wise Emacs Key Bindings
     file { "${home}/Library/KeyBindings":
         ensure => directory
-    } ->
-    file { "${home}/Library/KeyBindings/DefaultKeyBinding.dict":
+    }
+    -> file { "${home}/Library/KeyBindings/DefaultKeyBinding.dict":
         ensure => present,
         source =>
         'https://gist.githubusercontent.com/cheapRoc/9670905/raw/1c1cd2e84daf07c9a4c8de0ff86d1baf75d858c6/EmacsKeyBinding.dict',
@@ -24,7 +24,7 @@ if $::osfamily == 'Darwin' {
         domain => 'NSGlobalDomain',
         key    => 'AppleShowAllExtensions',
         type   => 'bool',
-        value  => 'true',
+        value  => true,
     }
 }
 
@@ -46,15 +46,13 @@ if $::osfamily == 'Darwin' {
 # default top editorconfig
 file { "${home}/.editorconfig":
     ensure => 'file',
-    source =>
-    'https://gist.githubusercontent.com/robturtle/485da1547ccd96a76e3061e6ba189777/raw/6dc6dd37224c5909348e8261dbcfeecc0653edeb/.editorconfig',
+    source => 'https://gist.githubusercontent.com/robturtle/485da1547ccd96a76e3061e6ba189777/raw/6dc6dd37224c5909348e8261dbcfeecc0653edeb/.editorconfig',
 }
 
 # TODO: variable name/email
 file { "${home}/.gitconfig":
     ensure => file,
-    source =>
-    'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/5b0e892a45cd285b9e24d2aba7b9645131769b7d/.gitconfig',
+    source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/5b0e892a45cd285b9e24d2aba7b9645131769b7d/.gitconfig',
 }
 
 # use Augeas
@@ -110,6 +108,11 @@ package { 'ipython':
 }
 
 ####################
+# Ruby
+####################
+package { 'rbenv': }
+
+####################
 # powerline 
 ####################
 # package { 'powerline':
@@ -126,11 +129,10 @@ if $::osfamily == 'Darwin' {
 
 file { $font_dir:
     ensure => 'directory',
-} ->
-file { "${font_dir}/Noto Mono for Powerline.ttf": # TODO: Heira to choose other font
+}
+-> file { "${font_dir}/Noto Mono for Powerline.ttf": # TODO: Heira to choose other font
     ensure => present,
-    source => 
-    'https://cdn.rawgit.com/powerline/fonts/641d35fe/NotoMono/Noto%20Mono%20for%20Powerline.ttf',
+    source => 'https://cdn.rawgit.com/powerline/fonts/641d35fe/NotoMono/Noto%20Mono%20for%20Powerline.ttf',
 } # TODO: iTerm set responding font
 
 # TODO: modify vimrc
