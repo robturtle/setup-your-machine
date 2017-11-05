@@ -149,6 +149,9 @@ package { 'slack':
 package { 'dropbox':
     provider => brewcask,
 }
+package { 'rubymine':
+    provider => brewcask,
+}
 
 ####################
 # Github
