@@ -103,6 +103,7 @@ file { "${home}/.editorconfig":
     source => 'https://gist.githubusercontent.com/robturtle/485da1547ccd96a76e3061e6ba189777/raw/6dc6dd37224c5909348e8261dbcfeecc0653edeb/.editorconfig',
 }
 
+# install vim
 vcsrepo { "${home}/.vim/bundle/Vundle.vim":
     ensure   => present,
     provider => git,
@@ -115,9 +116,25 @@ vcsrepo { "${home}/.vim/bundle/Vundle.vim":
     source  => 'https://gist.githubusercontent.com/robturtle/8b424daa53cf73e7e102e5d69dc8a908/raw/ab8b4a259df35e286a702d7640a4f221ed4a1e7a/.vimrc',
 }
 
+# install oh-my-zsh
+vcsrepo { "${home}/.oh-my-zsh":
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/robbyrussell/oh-my-zsh',
+    notify   => Exec['change_shell'],
+}
+-> file { "${home}/.zshrc":
+    require => Package['powerline'],
+    ensure => present,
+    source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/94849d9affe876a2da9eb55cd72af4a9bd2d5239/.zshrc',
+}
 # TODO: use Augeas
-# TODO: .zshrc
 
+exec { "change_shell":
+    command     => "chsh -s zsh ${::id}",
+    path        => '/usr/bin:/bin',
+    refreshonly => true,
+}
 
 ####################
 # Common softwares
