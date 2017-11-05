@@ -7,4 +7,5 @@ installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.c
 
 installed bundle || gem install bundler
 bundle install --without development test
+librarian-puppet install
 
