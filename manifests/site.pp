@@ -20,10 +20,16 @@ if $::osfamily == 'Darwin' {
 }
 
 ####################
+# System
+####################
+# TODO: Caps Lock => Control
+
+####################
 # Chinese
 ####################
 # TODO: wechat
 # TODO: sougou input method http://pinyin.sogou.com/mac/softdown.php
+# TODO: switch input method => M-Space
 
 ####################
 # Common dot files
