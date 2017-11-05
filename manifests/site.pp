@@ -226,3 +226,14 @@ file { $font_dir:
 package { 'lyricsx':
     provider => brewcask,
 }
+# They it's a good media player
+package { 'iina':
+    provider => brewcask,
+}
+
+###################
+# Paid
+###################
+package { 'bartender':
+    provider => brewcask,
+}
