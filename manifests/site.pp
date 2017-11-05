@@ -82,11 +82,11 @@ package { 'ipython':
 ####################
 # powerline 
 ####################
-package { 'powerline':
-    name     => 'powerline-status',
-    provider => pip,
-    require  => Package['python'],
-}
+# package { 'powerline':
+#    name     => 'powerline-status',
+#    provider => pip,
+#    require  => Package['python'],
+# }
 
 if $::osfamily == 'Darwin' {
     $font_dir = "${home}/Library/Fonts"
