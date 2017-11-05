@@ -44,6 +44,13 @@ if $::osfamily == 'Darwin' {
         path        => '/usr/bin:/bin',
         refreshonly => true,
     }
+
+    macdefaults { 'stop-open-photos-when-connect-to-iphone-ipad':
+        domain => 'com.apple.ImageCapture',
+        key    => 'disableHotPlug',
+        value  => true,
+        notify => Exec[restart_UI],
+    }
 }
 
 ####################
