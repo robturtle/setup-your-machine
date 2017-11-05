@@ -16,3 +16,5 @@ Use it to auto deploy developing environment. The reason not to use Boxen is mai
 - [ ] setup email accounts
 - [ ] cleanup desktop docker
 - [ ] defaults write iterm2.??? (dropdown, powerline fonts) (`~/Library/Application Support/iTerm*` `com.googlecode.iterm2*`)
+- [ ] disable trackpad when typing
+
