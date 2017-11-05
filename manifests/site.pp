@@ -8,7 +8,10 @@ if $::osfamily == 'Darwin' {
 }
 
 if $::osfamily == 'Darwin' {
-    # Mac System-wise Emacs Key Bindings  
+    # Mac System-wise Emacs Key Bindings
+    file { "${home}/Library/KeyBindings":
+        ensure => directory
+    } ->
     file { "${home}/Library/KeyBindings/DefaultKeyBinding.dict":
         ensure => present,
         source =>
