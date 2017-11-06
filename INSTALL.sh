@@ -1,3 +1,7 @@
+# make sure the script can be ran from any path
+dir=`dirname $0`
+pushd "$dir" > /dev/null
+
 function installed {
   which $1 >/dev/null
 }
@@ -9,4 +13,6 @@ installed bundle || gem install bundler
 bundle install --without development test && \
 librarian-puppet install && \
 puppet apply manifests/site.pp --modulepath=modules/
+
+popd > /dev/null
 
