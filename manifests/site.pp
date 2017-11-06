@@ -313,3 +313,9 @@ package { 'iina':
 package { 'bartender':
     provider => brewcask,
 }
+package { 'alfred':
+    provider => brewcask,
+}
+package { '1password':
+    provider => brewcask,
+}
