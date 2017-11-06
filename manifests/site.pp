@@ -176,6 +176,13 @@ package { 'git-extras': }
 package { 'tree': }
 
 ####################
+# PostgreSQL
+####################
+package { 'postgresql': }
+package { 'postgis': }
+
+
+####################
 # Common GUI
 ####################
 package { 'iterm2':
