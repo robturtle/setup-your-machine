@@ -220,6 +220,16 @@ package { 'workflowy':
 ####################
 package { ['python', 'python3']: }
 
+if $::osfamily == 'Darwin' {
+    file { '/usr/local/bin/pip':
+        require => Package['python'],
+        ensure  => 'link',
+        replace => 'no',
+        target  => '/usr/local/bin/pip2',
+        notify  => Package['powerline'],
+    }
+}
+
 # ipython3
 package { 'ipython':
     provider => pip3,
@@ -242,15 +252,6 @@ package { 'rbenv': }
 ####################
 # powerline 
 ####################
-if $::osfamily == 'Darwin' {
-    file { '/usr/local/bin/pip':
-        ensure  => 'link',
-        replace => 'no',
-        target  => '/usr/local/bin/pip2',
-        notify  => Package['powerline'],
-    }
-}
-
 # NOTE: there's bug if installing it with pip3
 package { 'powerline':
     name     => 'powerline-status',
