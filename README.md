@@ -5,6 +5,8 @@ USAGE:
 ./INSTALL.sh
 ```
 
+If you want to know what packages and configurations are being installed, check the [site.pp](manifests/site.pp). Note is under development stage for now and heavy changes are expected in the future. So this site.pp shall be the current authentic document.
+
 If you encounter any problems, feel free to make a github issue.
 
 Use it to auto deploy developing environment. The reason not to use Boxen is mainly about keeping the environemt with least dependencies and light-weighted.
