@@ -128,6 +128,13 @@ vcsrepo { "${home}/.oh-my-zsh":
     ensure => present,
     source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/d77101ffcf012a7f246543a9e9ae29e1836ba118/.zshrc',
 }
+# TODO: follows $ZSH_CUSTOM folder
+# my collection of awesome interactive features powered by Percol
+-> vcsrepo { "${home}/config/zsh/plugins/percol":
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/robturtle/percol.plugin.zsh',
+}
 
 exec { "change_shell":
     command     => "chsh -s zsh ${::id}",
@@ -244,6 +251,7 @@ if $::osfamily == 'Darwin' {
     }
 }
 
+# NOTE: there's bug if installing it with pip3
 package { 'powerline':
     name     => 'powerline-status',
     provider => pip,
@@ -272,8 +280,16 @@ file { $font_dir:
 ####################
 # Percol
 ####################
-# TODO: percol.d
-# TODO: percol function zsh plugin
+# NOTE: there's bug if installing it with pip3
+package { 'percol':
+    name     => 'percol',
+    provider => pip,
+    require  => Package['python'],
+}
+-> file { "${home}/.percol.d/rc.py":
+    ensure => present,
+    source => 'https://gist.githubusercontent.com/robturtle/f0acbd4f3a35d4a3a3d04513e7a6310c/raw/777d2fdcb9fa5d60970d99dea627ef9a20339cd9/.percol.d_rc.py',
+}
 
 ###################
 # Life
