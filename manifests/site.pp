@@ -201,9 +201,15 @@ package { 'dropbox':
 package { 'typora':
     provider => brewcask,
 }
+
 package { 'rubymine':
     provider => brewcask,
 }
+-> file { "${home}/.ideavimrc":
+    ensure  => present,
+    content => "source ~/.vimrc\nset visualbell\nset noerrorbells\n",
+}
+
 package { 'postman':
     provider => brewcask,
 }
