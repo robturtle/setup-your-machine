@@ -7,6 +7,10 @@ if $::osfamily == 'Darwin' {
     $home = "/home/${::id}"
 }
 
+Exec {
+    environment => [ "HOME=${home}" ]
+}
+
 if $::osfamily == 'Darwin' {
 
     # Mac System-wise Emacs Key Bindings
@@ -156,7 +160,7 @@ package { 'vim': }
 # git relative
 file { "${home}/.gitconfig":
     ensure => file,
-    source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/0d9f17d07879ff1ccc4660cdfb512d358ced0e84/.gitconfig',
+    source => 'https://gist.githubusercontent.com/robturtle/732f1cbef1b0e7839e1338f0c019e004/raw/82243f7ec6f8c226e0c7008531a1343d0ed242a1/.gitconfig',
 }
 # Those lazy module authors never thought their mod will be used in OSX. :thumb_down:
 -> exec { 'set_git_user_name':
