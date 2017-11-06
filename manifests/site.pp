@@ -197,6 +197,9 @@ package { 'typora':
 package { 'rubymine':
     provider => brewcask,
 }
+package { 'postman':
+    provider => brewcask,
+}
 
 ####################
 # Misc GUI
