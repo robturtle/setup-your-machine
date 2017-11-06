@@ -137,7 +137,7 @@ vcsrepo { "${home}/.oh-my-zsh":
 }
 
 exec { "change_shell":
-    command     => "chsh -s zsh ${::id}",
+    command     => "chsh -s /bin/zsh ${::id}",
     path        => '/usr/bin:/bin',
     refreshonly => true,
 }
