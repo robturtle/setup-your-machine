@@ -6,6 +6,9 @@ function installed {
   which $1 >/dev/null
 }
 
+# fix missing dependency bug in rubygems.org
+gem install minitar-cli
+
 # install homebrew
 installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
