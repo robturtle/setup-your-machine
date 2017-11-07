@@ -14,8 +14,8 @@ installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.c
 
 installed bundle || gem install bundler
 bundle install --without development test && \
-librarian-puppet install && \
-puppet apply manifests/site.pp --modulepath=modules/
+bundle exec librarian-puppet install && \
+bundle exec puppet apply manifests/site.pp --modulepath=modules/
 
 popd > /dev/null
 
