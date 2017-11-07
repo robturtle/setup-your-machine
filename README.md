@@ -1,4 +1,5 @@
 # setup-your-machine
+[![Build Status](https://semaphoreci.com/api/v1/robturtle/setup-your-machine/branches/production/badge.svg)](https://semaphoreci.com/robturtle/setup-your-machine)
 
 USAGE:
 ```
