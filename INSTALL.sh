@@ -6,11 +6,17 @@ function installed {
   which $1 >/dev/null
 }
 
+# install homebrew
+installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install ruby
+brew install ruby
+
 # fix missing dependency bug in rubygems.org
 gem install minitar-cli
 
-# install homebrew
-installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# https://tickets.puppetlabs.com/browse/FACT-804
+gem install CFPropertyList
 
 installed bundle || gem install bundler
 bundle install --without development test && \
