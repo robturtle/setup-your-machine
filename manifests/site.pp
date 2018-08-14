@@ -206,7 +206,7 @@ package { 'typora':
     provider => brewcask,
 }
 
-package { 'rubymine':
+package { 'intellij-idea':
     provider => brewcask,
 }
 -> file { "${home}/.ideavimrc":
@@ -315,11 +315,7 @@ package { 'percol':
 ###################
 # Life
 ###################
-# Show lyrics (supports Spotify & iTunues)
-package { 'lyricsx':
-    provider => brewcask,
-}
-# They it's a good media player
+# They said it's a good media player
 package { 'iina':
     provider => brewcask,
 }
@@ -331,8 +327,5 @@ package { 'bartender':
     provider => brewcask,
 }
 package { 'alfred':
-    provider => brewcask,
-}
-package { '1password':
     provider => brewcask,
 }
