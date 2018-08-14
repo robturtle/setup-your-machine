@@ -115,9 +115,8 @@ vcsrepo { "${home}/.vim/bundle/Vundle.vim":
 }
 # TODO: use Augeas
 -> file { "${home}/.vimrc":
-    require => Package['powerline'],
     ensure  => present,
-    source  => 'https://gist.githubusercontent.com/robturtle/8b424daa53cf73e7e102e5d69dc8a908/raw/ab8b4a259df35e286a702d7640a4f221ed4a1e7a/.vimrc',
+    source  => 'https://gist.githubusercontent.com/robturtle/8b424daa53cf73e7e102e5d69dc8a908/raw/4cbb4fd26bfa676d6bb78e2824ebdd42e43c87cd/.vimrc',
 }
 
 # install oh-my-zsh
