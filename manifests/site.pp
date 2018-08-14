@@ -187,47 +187,11 @@ package { 'postgis': }
 
 
 ####################
-# Common GUI
+# IntelliJ
 ####################
-package { 'iterm2':
-    provider => brewcask,
-}
-package { 'google-chrome':
-    provider => brewcask,
-}
-package { 'slack':
-    provider => brewcask,
-}
-package { 'dropbox':
-    provider => brewcask,
-}
-# The best Markdown editor made by a smart Chinese guy
-package { 'typora':
-    provider => brewcask,
-}
-
-package { 'intellij-idea':
-    provider => brewcask,
-}
--> file { "${home}/.ideavimrc":
+file { "${home}/.ideavimrc":
     ensure  => present,
     content => "source ~/.vimrc\nset visualbell\nset noerrorbells\n",
-}
-
-package { 'postman':
-    provider => brewcask,
-}
-
-####################
-# Misc GUI
-####################
-# Window resizer => best for big screen
-package { 'spectacle':
-    provider => brewcask,
-}
-# Tree structured TODO list (enjoyable to use)
-package { 'workflowy':
-    provider => brewcask,
 }
 
 ####################
@@ -310,22 +274,4 @@ package { 'percol':
 -> file { "${home}/.percol.d/rc.py":
     ensure => present,
     source => 'https://gist.githubusercontent.com/robturtle/f0acbd4f3a35d4a3a3d04513e7a6310c/raw/777d2fdcb9fa5d60970d99dea627ef9a20339cd9/.percol.d_rc.py',
-}
-
-###################
-# Life
-###################
-# They said it's a good media player
-package { 'iina':
-    provider => brewcask,
-}
-
-###################
-# Paid
-###################
-package { 'bartender':
-    provider => brewcask,
-}
-package { 'alfred':
-    provider => brewcask,
 }
