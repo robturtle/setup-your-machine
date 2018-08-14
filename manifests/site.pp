@@ -139,6 +139,7 @@ vcsrepo { "${home}/.oh-my-zsh":
     source   => 'https://github.com/robturtle/percol.plugin.zsh',
 }
 
+# SHOULD manually call this
 exec { "change_shell":
     command     => "chsh -s /bin/zsh ${::id}",
     path        => '/usr/bin:/bin',
