@@ -129,7 +129,7 @@ vcsrepo { "${home}/.oh-my-zsh":
 -> file { "${home}/.zshrc":
     require => Package['powerline'],
     ensure => present,
-    source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/d77101ffcf012a7f246543a9e9ae29e1836ba118/.zshrc',
+    source => 'https://gist.githubusercontent.com/robturtle/1ff2228bd10387d39ec22e5ba27c66ce/raw/a2bd3dafc3a8333e613dce423641b84a2252355d/.zshrc',
 }
 # TODO: follows $ZSH_CUSTOM folder
 # my collection of awesome interactive features powered by Percol
