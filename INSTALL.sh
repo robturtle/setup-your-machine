@@ -19,6 +19,7 @@ gem install minitar-cli
 gem install CFPropertyList
 
 installed bundle || gem install bundler
+bundle config specific_platform true
 bundle install --without development test && \
 bundle exec librarian-puppet install && \
 bundle exec puppet apply manifests/site.pp --modulepath=modules/
